@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-gray-300 py-6">
       <div className="container mx-auto px-4 flex flex-col items-center space-y-4 md:space-y-0 md:flex-row md:justify-center">
         {/* Social Media Links - Visible only on mobile */}
-        <div className="flex space-x-6 md:hidden">
+        {/* <div className="flex space-x-6 md:hidden">
           <a
             href="https://github.com/devsingh1504"
             target="_blank"
@@ -24,11 +24,11 @@ const Footer = () => {
           >
             <FaLinkedin size={24} />
           </a>
-        </div>
+        </div> */}
 
         {/* Website Info - Centered text on larger screens */}
         <div className="text-center">
-          <p>Developed with ❤️ for student</p>
+          <p>Developed with ❤️ and a lot of ☕</p>
           <p>© {new Date().getFullYear()} RankBridge. All rights reserved.</p>
         </div>
       </div>

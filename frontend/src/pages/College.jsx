@@ -1,4 +1,3 @@
-// src/components/CollegeCards.js
 import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
@@ -67,7 +66,19 @@ const College = () => {
   return (
     <>
       <Navbar />
-      <div className="p-6 grid gap-8 mt-14 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {/* Heading Section */}
+      <div className="text-center mt-20 mb-8">
+        <h1 className="text-2xl font-bold text-gray-800">
+          IPU Colleges for Engineering
+        </h1>
+        <p className="text-gray-600 mt-2">
+          Explore the best colleges affiliated with Guru Gobind Singh
+          Indraprastha University for engineering.
+        </p>
+      </div>
+
+      {/* College Cards Section */}
+      <div className="p-6 grid gap-8 mt-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {recommendedColleges.map((college, index) => (
           <motion.div
             key={college.rank}
@@ -85,10 +96,10 @@ const College = () => {
               <h2 className="text-lg font-semibold text-gray-800">
                 {college.name}
               </h2>
-              <p className="text-gray-600">Location: {college.location}</p>
-              {/* <p className="text-gray-600">Rank: {college.rank}</p> */}
               <motion.a
                 href={college.link}
+                //target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-block mt-4 px-4 py-2 text-sm text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors duration-300"

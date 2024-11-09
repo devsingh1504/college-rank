@@ -56,7 +56,70 @@ const Navbar = () => {
       </div>
 
       {/* Sidebar for mobile menu */}
+      {/* Sidebar for mobile menu */}
       {isOpen && (
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "-100%" }}
+          transition={{ duration: 0.3 }}
+          className="fixed top-0 left-0 h-full w-3/4 bg-gray-800 shadow-lg z-40 p-6 flex flex-col justify-between"
+        >
+          {/* Sidebar Header */}
+          <div>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl ml-14 font-bold text-white">
+                RankBridge
+              </h2>
+              <button onClick={toggleMenu} className="focus:outline-none">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            {/* Navigation Links */}
+            <ul className="space-y-4 text-center font-bold mt-10">
+              {navItems.map((item) => (
+                <motion.li
+                  key={item.label}
+                  whileTap={{ scale: 0.95 }}
+                  className="text-white text-2xl"
+                >
+                  <a
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="hover:text-blue-400 transition-colors duration-200"
+                  >
+                    {item.label}
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Image at the bottom */}
+          <div className="mt-auto mb-4">
+            <img
+              src="/rank.png" // Replace this with the path to your uploaded image
+              alt="Sidebar Image"
+              className="w-full object-cover rounded-lg"
+            />
+          </div>
+        </motion.div>
+      )}
+
+      {/* {isOpen && (
         <motion.div
           initial={{ x: "-100%" }}
           animate={{ x: 0 }}
@@ -65,7 +128,7 @@ const Navbar = () => {
           className="fixed top-0 left-0 h-full w-3/4 bg-gray-800 shadow-lg z-40 p-6"
         >
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-xl font-bold text-white">Menu</h2>
+            <h2 className="text-2xl ml-14 font-bold text-white">RankBridge</h2>
             <button onClick={toggleMenu} className="focus:outline-none">
               <svg
                 className="w-6 h-6 text-white"
@@ -101,7 +164,7 @@ const Navbar = () => {
             ))}
           </ul>
         </motion.div>
-      )}
+      )} */}
     </nav>
   );
 };
