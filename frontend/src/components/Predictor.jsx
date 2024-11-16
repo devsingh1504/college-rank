@@ -17,7 +17,7 @@ const Predictor = () => {
     setJeeRank(rank);
 
     // Validation: only accept ranks between 40,000 and a reasonable upper limit (e.g., 2,00,000)
-    if (rank < 40000 || rank > 450000 || isNaN(rank)) {
+    if (rank < 1 || rank > 450000 || isNaN(rank)) {
       setValidationError("Please enter a valid rank");
     } else {
       setValidationError("");
